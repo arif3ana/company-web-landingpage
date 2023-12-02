@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import {
+  Box,
+  Stack,
+  ThemeProvider,
+  Typography,
+  createTheme,
+} from "@mui/material";
+import { Navbar } from "./components";
+import About from "./components/About";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#FFC107",
+      },
+      secondary: {
+        main: "#F8F8F8",
+      },
+      text: {
+        primary: "#000000",
+        secondary: "#0F2233",
+      },
+      common: {
+        black: "#0F2233",
+        white: "#FFFFFF",
+      },
+    },
+  });
+
+  const boxStyle = {
+    height: "100vh",
+    width: '100vw',
+    background: `linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('/src/assets/header.jpg')`,
+    backgroundSize: "cover",
+    backgroundPosition: "center"
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <Box sx={boxStyle} >
+        <Navbar />
+        <Stack height="80vh" justifyContent={"center"} sx={{paddingX: {xs: 4, sm: 10}}}>
+          <Typography variant='h2' sx={{fontWeight: "bold", fontSize: {xs: "10vw", sm: "7vw", md: "6vw"}}} >
+            High-Quality Heavy Equipment, Uncompromising Performance
+          </Typography>
+        </Stack>
+      </Box>
+        <About />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
