@@ -6,8 +6,7 @@ import {
   Typography,
   createTheme,
 } from "@mui/material";
-import { Navbar } from "./components";
-import About from "./components/About";
+import {About, Navbar, Services, SubAbout} from "./components";
 
 function App() {
   const theme = createTheme({
@@ -31,23 +30,33 @@ function App() {
 
   const boxStyle = {
     height: "100vh",
-    width: '100vw',
+    width: "100vw",
     background: `linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('/src/assets/header.jpg')`,
     backgroundSize: "cover",
-    backgroundPosition: "center"
+    backgroundPosition: "center",
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={boxStyle} >
+      <Box sx={boxStyle}>
         <Navbar />
-        <Stack height="80vh" justifyContent={"center"} sx={{paddingX: {xs: 4, sm: 10}}}>
-          <Typography variant='h2' sx={{fontWeight: "bold", fontSize: {xs: "10vw", sm: "7vw", md: "6vw"}}} >
+        <Stack
+          height='80vh'
+          justifyContent={"center"}
+          sx={{paddingX: {xs: 4, sm: 10}}}>
+          <Typography
+            variant='h2'
+            sx={{
+              fontWeight: "bold",
+              fontSize: {xs: "10vw", sm: "7vw", md: "6vw"},
+            }}>
             High-Quality Heavy Equipment, Uncompromising Performance
           </Typography>
         </Stack>
       </Box>
-        <About />
+      <About />
+      <SubAbout />
+      <Services />
     </ThemeProvider>
   );
 }

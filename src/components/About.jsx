@@ -1,6 +1,6 @@
 import React from "react";
 import {
-    Box,
+  Box,
   List,
   ListItem,
   ListItemIcon,
@@ -8,12 +8,9 @@ import {
   Typography,
   useTheme,
 } from "@mui/material";
-import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
-import MainHeading from "./atom/MainHeading";
-import SecondHeading from "./atom/SecondHeading";
-import Picture from "./atom/Picture";
-import excavator from "../assets/excavator.jpeg";
-import bulldozer from "../assets/bulldozer.jpeg";
+import {MainHeading, SecondHeading, Picture, Paragraf} from "./atom/index";
+import {bulldozer, excavator} from "../assets";
+import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
 
 const About = () => {
   const theme = useTheme();
@@ -24,39 +21,45 @@ const About = () => {
   ];
 
   const circleStyle = {
-        width: {xs: "25vw", sm: "15vw", md: "10vw"}, 
-        height: {xs: "25vw", sm: "15vw", md: "10vw"}, 
-        borderRadius: "50%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "absolute", 
-        bgcolor: theme.palette.primary.main,
-        right: {xs: "36%", sm: '42%', md: "18.5%"},
-    }
-
-  
+    width: {xs: "25vw", sm: "15vw", md: "10vw"},
+    height: {xs: "25vw", sm: "15vw", md: "10vw"},
+    borderRadius: "50%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    bgcolor: theme.palette.primary.main,
+    right: {xs: "36%", sm: "42%", md: "18.5%"},
+  };
 
   return (
-    <Stack sx={{paddingX: {xs: 2, sm: 5}, paddingTop: 5, flexDirection: "row", flexWrap: {xs: "wrap", md: "nowrap"}, gap: 2}} >
+    <Stack
+      sx={{
+        paddingX: {xs: 2, sm: 5},
+        paddingTop: 5,
+        flexDirection: "row",
+        flexWrap: {xs: "wrap", md: "nowrap"},
+        gap: 2,
+      }}>
       <Stack>
         <MainHeading content={"About Us"} />
         <SecondHeading content={"Working Through Dirt & Dust"} />
-        <Typography
-          variant='body1'
-          color={theme.palette.text.primary}
-          sx={{fontSize: {xs: "4.5vw", sm: "3vw", md: "2vw"}}}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique sit inventore harum dolores.
-        </Typography>
+        <Paragraf
+          theme={theme}
+          content={
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique sit inventore harum dolores."
+          }
+        />
 
         <List>
-          {listCentang.map((content) => (
-            <ListItem sx={{margin: 0}}>
-              <ListItemIcon sx={{margin: 0, padding: 0 }}>
+          {listCentang.map((content, index) => (
+            <ListItem sx={{margin: 0}} key={index}>
+              <ListItemIcon sx={{margin: 0, padding: 0}}>
                 <CheckRoundedIcon
-                  style={{
+                  sx={{
                     color: theme.palette.primary.main,
-                    fontSize: {xs: "medium", sm: "large", md: "large"}
+                    fontSize: {xs: "8vw", sm: "4.5vw", md: "3.5vw"},
+                    fontWeight: 700,
                   }}
                 />
               </ListItemIcon>
@@ -75,8 +78,16 @@ const About = () => {
         <Picture image={excavator} className={"about-image"} />
         <Picture image={bulldozer} className={"about-image"} />
         <Box sx={circleStyle} flexDirection={"column"}>
-            <Typography variant="body2" sx={{fontWeight: "bold", fontSize: {sm: "2.5vw", md: "1.5vw"}}}>Since</Typography>
-            <Typography variant="h5" sx={{fontWeight: "bold", fontSize: {sm: "4vw", md: "2.5vw"}}}>2024</Typography>
+          <Typography
+            variant='body2'
+            sx={{fontWeight: "bold", fontSize: {sm: "2.5vw", md: "1.5vw"}}}>
+            Since
+          </Typography>
+          <Typography
+            variant='h5'
+            sx={{fontWeight: "bold", fontSize: {sm: "4vw", md: "2.5vw"}}}>
+            2024
+          </Typography>
         </Box>
       </Stack>
     </Stack>
