@@ -4,3 +4,15 @@
     border-radius: 1vw;
     aspect-ratio: 4 / 6;
 }
+
+@media screen and (max-width: 600px) {
+    .expertiso-image {
+        width: 100%;
+    }  
+}
+
+@media screen and (min-width: 600px) {
+    .expertiso-image {
+        width: 100%;
+    }  
+}

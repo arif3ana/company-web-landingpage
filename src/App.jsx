@@ -6,7 +6,7 @@ import {
   Typography,
   createTheme,
 } from "@mui/material";
-import {About, Navbar, Services, SubAbout} from "./components";
+import {About, Expertiso, Navbar, Services, SubAbout} from "./components";
 
 function App() {
   const theme = createTheme({
@@ -57,6 +57,7 @@ function App() {
       <About />
       <SubAbout />
       <Services />
+      <Expertiso />
     </ThemeProvider>
   );
 }
