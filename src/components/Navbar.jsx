@@ -30,7 +30,7 @@ function Navbar() {
 
   return (
     <>
-      <AppBar position='static' sx={{bgcolor: "transparent", paddingX: 2, position: "sticky", top: 0}}>
+      <AppBar component="nav" sx={{bgcolor: "rgba(0, 0, 0, 0.3)", backdropFilter: "blur(10px)", paddingX: 2, position: "fixed", top: 0}}>
         <Toolbar>
           <Typography
             variant='h5'

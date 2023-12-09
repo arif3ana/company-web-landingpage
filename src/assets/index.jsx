@@ -7,5 +7,7 @@ import Mining from "./MiningContractorDoc.jpg";
 import Property from "./PropertyDemolitionDoc.jpg";
 import Building from "./BuildingConstructionDoc.jpg";
 import ExcavatorBigIcon from "./ExcavatorBigIcon.png";
+import BgTagline from "./BgTagline.jpg";
+import Stone from "./Stone.png";
 
-export {bulldozer, excavator, BullDozerIcon, ExcavatorIcon, DumpsterIcon, Mining, Property, Building, ExcavatorBigIcon};
+export {bulldozer, excavator, BullDozerIcon, ExcavatorIcon, DumpsterIcon, Mining, Property, Building, ExcavatorBigIcon, BgTagline, Stone};

@@ -9,10 +9,18 @@
     .expertiso-image {
         width: 100%;
     }  
+    .HeadFeedback-image {
+        width: 100%;
+        transform: rotate(15deg);
+    }
 }
 
 @media screen and (min-width: 600px) {
     .expertiso-image {
         width: 100%;
     }  
+    .HeadFeedback-image {
+        width: 100%;
+        transform: rotate(23deg);
+    }
 }
