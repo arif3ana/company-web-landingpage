@@ -29,7 +29,8 @@ const About = () => {
     alignItems: "center",
     position: "absolute",
     bgcolor: theme.palette.primary.main,
-    right: {xs: "36%", sm: "42%", md: "18.5%"},
+    right: {xs: "36%", sm: "42%", md: "19.5%"},
+    top: {xs: "180%", sm: "182%", md: "120%"}
   };
 
   return (

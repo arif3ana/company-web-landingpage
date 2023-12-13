@@ -26,6 +26,7 @@ const HeadFeedback = () => {
     position: "absolute",
     bgcolor: theme.palette.primary.main,
     right: {xs: "36%", sm: "42%", md: "18.5%"},
+    bottom: {xs: "-822%", sm: "-1005%", md: "-575%"},
   };
 
   return (
@@ -76,7 +77,7 @@ const HeadFeedback = () => {
 
       <Stack direction={"row"} spacing={1} width={{md: "80%"}}>
         <Picture image={Stone} className={"HeadFeedback-image"} />
-        <Box sx={circleStyle} flexDirection={"column"}>
+        <Box sx={circleStyle} flexDirection={"column"} zIndex={99999}>
           <Typography
             variant='h5'
             sx={{fontWeight: "bold", fontSize: {xs: "6.5vw", sm: "4.5vw", md: "2.5vw"}}}>
