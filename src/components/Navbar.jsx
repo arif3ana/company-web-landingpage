@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../styles/navbar.css";
+import {Link} from "react-router-dom";
 
 function Navbar() {
   const theme = useTheme();
@@ -30,45 +31,65 @@ function Navbar() {
 
   return (
     <>
-      <AppBar component="nav" sx={{bgcolor: "rgba(0, 0, 0, 0.3)", backdropFilter: "blur(10px)", paddingX: 2, position: "fixed", top: 0}}>
+      <AppBar
+        component='nav'
+        sx={{
+          bgcolor: "rgba(0, 0, 0, 0.3)",
+          backdropFilter: "blur(10px)",
+          paddingX: 2,
+          position: "fixed",
+          top: 0,
+        }}>
         <Toolbar>
           <Typography
             variant='h5'
             component={"div"}
-            sx={{flexGrow: 1, color: theme.palette.common.white, fontWeight: "bold"}}>
+            sx={{
+              flexGrow: 1,
+              color: theme.palette.common.white,
+              fontWeight: "bold",
+            }}>
             ProRent
           </Typography>
           <Stack
             direction={"row"}
             spacing={2}
             sx={{display: {xs: "none", sm: "flex"}}}>
-            <Button
-              variant='text'
-              href='#'
-              className='nav-link'
-              style={{color: theme.palette.common.white, fontWeight: "bold"}}>
-              Home
-            </Button>
-            <Button
-              variant='text'
-              href='#'
-              className='nav-link'
-              style={{color: theme.palette.common.white, fontWeight: "bold"}}>
-              About Us
-            </Button>
-            <Button
-              variant='text'
-              href='#'
-              className='nav-link'
-              style={{color: theme.palette.common.white, fontWeight: "bold"}}>
-              Pages
-            </Button>
-            <Button
-              variant='contained'
-              disableElevation
-              style={{color: theme.palette.common.white, fontWeight: "bold"}}>
-              Contact
-            </Button>
+            <Link to={"/"}>
+              <Button
+                variant='text'
+                href='/'
+                className='nav-link'
+                style={{color: theme.palette.common.white, fontWeight: "bold"}}>
+                Home
+              </Button>
+            </Link>
+            <Link to={"/aboutus"}>
+              <Button
+                variant='text'
+                href='/aboutus'
+                className='nav-link'
+                style={{color: theme.palette.common.white, fontWeight: "bold"}}>
+                About Us
+              </Button>
+            </Link>
+            <Link to={"/services"}>
+              <Button
+                variant='text'
+                href='/services'
+                className='nav-link'
+                style={{color: theme.palette.common.white, fontWeight: "bold"}}>
+                Services
+              </Button>
+            </Link>
+            <Link to={"/contact"}>
+              <Button
+                variant='contained'
+                disableElevation
+                style={{color: theme.palette.common.white, fontWeight: "bold"}}>
+                Contact
+              </Button>
+            </Link>
           </Stack>
           <IconButton
             sx={{
